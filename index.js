@@ -9,6 +9,7 @@
 const Discord = require("discord.js")
 const intents = new Discord.IntentsBitField(3276799)
 const bot = new Discord.Client({intents})
+const token = process.env.token
 const loadCommands = require("./Loaders/loadCommands")
 const loadEvents = require("./Loaders/loadEvents")
 const config = require("./config")
@@ -26,4 +27,4 @@ loadEvents(bot)
 loadSlashCommands(bot)
 
 
-bot.login(config.token)
+bot.login(token)
